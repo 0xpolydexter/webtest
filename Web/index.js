@@ -29,31 +29,53 @@ function checkAnagram(str1, str2) {
     else {
         for (i = 0; i < str1.length; i++) {
             for (j = 0; j < str2.length; j++) {
-                if(str1[i] == str2[j]) {
-               // console.log('matches',str1[i],str2[j]);
-                z++;
-                }
+                if (str1[i] == str2[j]) {
+                    // console.log('matches',str1[i],str2[j]);
+                    z++;
                 }
             }
-          //  console.log(z);
-            if (z>=str1.length)
-            return`${str1} and ${str2} are anagram!`;
-            else return `${str1} and ${str2} are not anagram!`;
         }
+        //  console.log(z);
+        if (z >= str1.length)
+            return `${str1} and ${str2} are anagram!`;
+        else return `${str1} and ${str2} are not anagram!`;
+    }
 }
-console.log(checkAnagram('fired','fried'));
-console.log(checkAnagram('logo','ogol'));
-console.log(checkAnagram('abcd','abc'));
+console.log(checkAnagram('fired', 'fried'));
+console.log(checkAnagram('logo', 'ogol'));
+console.log(checkAnagram('abcd', 'abc'));
 
 //string reversal
-function reverseit(a)
-{
-    var b=[];
-for (i=0;i<a.length;i++)
-{
-    b[i] = a[a.length-i-1];
-    
-}
-return b.join("")
+function reverseit(a) {
+    var b = [];
+    for (i = 0; i < a.length; i++) {
+        b[i] = a[a.length - i - 1];
+
+    }
+    return b.join("")
 }
 console.log(reverseit('opportunity'));
+
+//find missing number
+var b = [];
+var j=0;
+function findDuplicates(a) 
+{
+    for(var i=0;i<a.length;i++)
+    {
+       for(varj=0;j<a.length;j++)
+       {
+           if(i=j)
+           j++;
+           break;
+           if(a[i]==a[j])
+           {
+               return a[i];
+           } 
+       }
+    }
+ 
+}
+
+console.log(findDuplicates([1,2,3,2,4,5,6,5,7,7]))
+
