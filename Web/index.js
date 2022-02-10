@@ -54,28 +54,24 @@ function reverseit(a) {
     }
     return b.join("")
 }
-console.log(reverseit('opportunity'));
+console.log(reverseit('revere item'));
 
-//find missing number
+//find duplicates
 var b = [];
-var j=0;
-function findDuplicates(a) 
+var c = [];
+function findDup(a) 
 {
-    for(var i=0;i<a.length;i++)
-    {
-       for(varj=0;j<a.length;j++)
-       {
-           if(i=j)
-           j++;
-           break;
-           if(a[i]==a[j])
-           {
-               return a[i];
-           } 
-       }
+    b = a.sort();
+    for (var i = 0; i < b.length; i++) {
+        if (b[i] == b[i + 1] && b[i] != b[i+2]) {
+            c.push(b[i]);
+        }
     }
- 
+    return c.toString();
 }
+console.log(findDup([3,9,6,7,5,2,3,7,5,9,8,1,8,5,7,2,1,3,9,6,7,5,4,3,2,1,2,6,7,9,8,5,6]));
 
-console.log(findDuplicates([1,2,3,2,4,5,6,5,7,7]))
+
+//
+
 
